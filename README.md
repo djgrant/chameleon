@@ -6,7 +6,7 @@ Chameleon
 
 From the command line:
 
-`gem install chameleon`
+`gem install sass-chameleon`
 
 
 In your Sass project:
