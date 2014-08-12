@@ -7,7 +7,7 @@
   ],
   "description": "A styleless Sass framework for responsive user interfaces",
   "main": [
-    "assets/stylesheets/_chameleon.sass",
+    "assets/stylesheets/_chameleon.sass"
   ],
   "keywords": [
     "sass",
