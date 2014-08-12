@@ -1,0 +1,24 @@
+{
+  "name": "chamelon-sass",
+  "version": "0.0.1",
+  "homepage": "https://github.com/djgrant/chameleon",
+  "authors": [
+    "Daniel John Grant"
+  ],
+  "description": "A styleless Sass framework for responsive user interfaces",
+  "main": [
+    "assets/stylesheets/_chameleon.sass",
+  ],
+  "keywords": [
+    "sass",
+    "css",
+    "responsive",
+    "oocss",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "lib"
+  ]
+}
