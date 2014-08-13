@@ -2,19 +2,56 @@ Chameleon
 =========
 
 
-### Getting started
+## Getting started
 
-From the command line:
+### Installing in a Rails project
 
-`gem install sass-chameleon`
+Add to your Gemfile:
 
+`gem 'chameleon-sass'`
 
-In your Sass project:
+Add to your main Sass stylesheet:
 
 `@import "chameleon";`
 
 
-Generate some responsive grid classes:
+### Installing in a Compass project
+
+From the command line:
+
+`gem install chameleon-sass`
+
+Add to the top of your Compass config file (usually config.rb):
+
+`require 'chameleon-sass'`
+
+Add to your main Sass stylesheet:
+
+`@import "chameleon"`
+
+
+### Installing in a Bower project
+
+From the command line:
+
+`bower install chameleon-sass`
+
+If you are using Compass you can add the import path to your Compass config file (usually config.rb):
+
+`add_import_path "bower_components/chameleon-sass/assets/stylesheets/"`
+
+Otherwise, you will need to manually add the above path to your @import.
+
+Add to your main Sass stylesheet:
+
+`@import "chameleon"`
+
+
+### Generating a responsive grid
+
+One of the defining feature of Chameleon is that no CSS is generated until you explictly declare the generation of some classes.
+
+Let's get started by adding some building blocks of a responsive grid:
 
 ```
 @include grid-defaults();
