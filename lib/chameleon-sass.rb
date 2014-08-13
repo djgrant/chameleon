@@ -1,17 +1,17 @@
 module ChameleonSass
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
   DATE = "2014-08-12"
 
   class << self
 
     def load
-      if compass
-        register_compass
-      elsif sass?
-        add_sass_load_path
-      else
-        add_sass_load_path_to_env
-      end
+      methods = {
+        sass: 'add_sass_load_path',
+        compass: 'register_compass',
+        none: 'add_sass_load_path_to_env'
+      }
+
+      self.send(methods[defined_framework])
     end
 
     def project_path
@@ -26,12 +26,16 @@ module ChameleonSass
       File.join(assets_path, 'stylesheets')
     end
 
+    def defined_framework
+      compass? || sass? || :none
+    end
+
     def compass?
-      defined? ::Compass
+      return :compass if defined?(::Compass)
     end
 
     def sass?
-      defined? ::Sass
+      return :sass if defined?(::Sass)
     end
 
     def register_compass
