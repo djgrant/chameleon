@@ -5,7 +5,7 @@ module ChameleonSass
   class << self
 
     def load
-      if compass?
+      if compass
         register_compass
       elsif sass?
         add_sass_load_path
@@ -14,12 +14,12 @@ module ChameleonSass
       end
     end
 
-    def gem_path
+    def project_path
       File.expand_path(File.join(File.dirname(__FILE__), '..'))
     end
 
     def assets_path
-      File.join(gem_path, 'assets')
+      File.join(project_path, 'assets')
     end
 
     def stylesheets_path
@@ -37,7 +37,7 @@ module ChameleonSass
     def register_compass
       ::Compass::Frameworks.register(
         'chameleon-sass',
-        :path => gem_path,
+        :path => project_path,
         :stylesheets_directory => stylesheets_path
       )
     end
