@@ -1,0 +1,103 @@
+=on($_device)
+  @each $breakpoint in $device-breakpoints
+    $device: nth($breakpoint, 1)
+    $expression: nth($breakpoint, 2)
+    @if $_device == $device and $expression
+      @media all and #{$expression}
+        @content
+    @if $_device == "base"
+      @content
+
+
+=mq($from: false, $to: false)
+
+  $min-width: 0
+  $max-width: 0
+  $expression: "all"
+
+  @if $from
+    @if type-of($from) == number
+      $min-width: $from
+    @else
+      @each $breakpoint in $breakpoints
+        $name: nth($breakpoint, 1)
+        $width: nth($breakpoint, 2)
+
+        @if $from == $name and $width
+          $min-width: $width
+
+    @if $min-width
+      $min-expression: "(min-width: #{$min-width})"
+
+  @if $to
+    @if type-of($to) == number
+      $max-width: $to
+    @else
+      @each $breakpoint in $breakpoints
+        $name: nth($breakpoint, 1)
+        $width: nth($breakpoint, 2)
+
+        @if $to == $name and $width
+          $max-width: $width
+
+  @if $min-width != 0
+    $expression: "#{$expression} and (min-width: #{$min-width})"
+
+  @if $max-width != 0
+    $expression: "#{$expression} and (max-width: #{$max-width})"
+
+  @media #{$expression}
+    @content
+
+
+// Helper variable: just the device names
+$devices: (null)
+
+@each $item in $device-breakpoints
+  $device: unquote(#{nth($item, 1)})
+  $devices: append($devices, $device, space)
+
+
+=debug-breakpoints
+  @each $breakpoint in $breakpoints
+    $device: nth($breakpoint, 1)
+    $min-width: nth($breakpoint, 2)
+
+    +mq($from: $device)
+      body:before
+        content: '#{$device} (#{$min-width}+)'
+        position: fixed
+        left: 0
+        right: 0
+        bottom: 0
+        padding: 1rem 0
+        text-align: center
+        background: white
+        opacity: 0.65
+        z-index: 100
+
+
+// It's not possible to extend into media queries so this mixin
+// creates, for every breakpoint, a named version of the placeholder
+
+=placeholders($name)
+  %#{$name}
+    @content
+
+  @each $breakpoint in $device-breakpoints
+    $device: nth($breakpoint, 1)
+    +on($device)
+      %#{$name}-on-#{$device}
+        @content
+
+
+// Genenerate a list of classes for different breakpoints
+// Usage: +classes(big-thing, mobile tablet desktop-up)
+
+=classes($name, $on: false)
+  $devices: if($on, $on, $devices)
+  @each $device in $devices
+    $postfix: if($device == "base", "", -on-#{$device})
+    +on($device)
+      .#{$name}#{$postfix}
+        @extend %#{$name}#{$postfix}

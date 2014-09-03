@@ -1,0 +1,132 @@
+=grid-defaults
+  .row
+    @extend %expanded
+    letter-spacing: -0.25em
+
+    +on("fablet-down")
+      letter-spacing: -0.27em
+
+    > *
+      letter-spacing: normal
+
+  .row.no-cols
+    letter-spacing: normal
+
+  [class^="col-"],
+  [class*=" col-"]
+    @extend %col
+    @extend %expanded
+
+
++placeholders("col")
+  display: inline-block
+  min-height: 1px
+  vertical-align: top
+  letter-spacing: normal
+  word-spacing: normal
+
++placeholders("col-1-2")
+  width: 50%
+
++placeholders("col-1-3")
+  width: 33.333333%
+
++placeholders("col-2-3")
+  width: 66.666666%
+
++placeholders("col-1-4")
+  width: 25%
+
++placeholders("col-3-4")
+  width: 75%
+
+
+// Switch cols to rows (stack 'em)
+
++placeholders("cols-to-rows")
+  &.row
+    display: block
+    margin-left: 0
+
+  & > *
+    display: block
+    width: 100% !important // override col width
+    padding: 0 !important // override col spacing
+
+    &:last-child
+      margin-bottom: 0
+
+
+// Reverse column order
+
++placeholders("cols-reversed")
+  direction: rtl
+
+  > *
+    direction: ltr
+    text-align: left
+
+
+// Equal height columns
+// Can't be used with reversed
+
++placeholders("cols-equal-height")
+  display: table-row
+
+  > *
+    display: table-cell
+
+  > :first-child
+    padding-left: 0
+
+
+// Column spacing - add gutter
+
+=cols-spaced($gutter)
+  margin-left: -$gutter
+
+  & > *
+    padding-left: $gutter
+
++placeholders("cols-spaced-small")
+  +cols-spaced($unit-small)
+
++placeholders("cols-spaced")
+  +cols-spaced($unit)
+
++placeholders("cols-spaced-big")
+  +cols-spaced($unit-big)
+
++placeholders("cols-spaced-huge")
+  +cols-spaced($unit-huge)
+
+
+// Row spacing - add baseline gutter
+
+=rows-spaced($_gutter)
+  & > .row
+    padding-bottom: $_gutter
+
+  // Space cols that have been switched to rows too
+  &[class*="cols-to-rows"]
+    margin-bottom: -$_gutter // removes gutter below last row / cols
+
+    & > *
+      margin-bottom: $_gutter
+
++placeholders("rows-spaced-small")
+  +rows-spaced($unit-small)
+
++placeholders("rows-spaced")
+  +rows-spaced($unit)
+
++placeholders("rows-spaced-big")
+  +rows-spaced($unit-big)
+
++placeholders("rows-spaced-huge")
+  +rows-spaced($unit-huge)
+
+=rows-spaced-defaults
+  // This can happily be applied to all rows
+  .row:last-child
+    padding-bottom: 0

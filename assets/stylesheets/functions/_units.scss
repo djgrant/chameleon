@@ -1,0 +1,15 @@
+@function remove-unit($number){
+ @return $number / ($number * 0 + 1);
+}
+
+@function em($value) {
+  @return (remove-unit($value) / remove-unit($font-size-base)) * 1em;
+}
+
+@function rem($value) {
+  @return (remove-unit($value) / remove-unit($font-size-base)) * 1rem;
+}
+
+@function px($value) {
+  @return (remove-unit($value) * $font-size-base);
+}

@@ -1,0 +1,36 @@
++placeholders("aligned-right")
+  text-align: right
+
++placeholders("aligned-center")
+  text-align: center
+
++placeholders("expanded")
+  &:before,
+  &:after
+    content: ""
+    display: table
+
+  &:after
+    clear: both
+
+
++placeholders("child-centered")
+  text-align: center
+
+  &::after
+    content: ''
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    margin-right: -0.25em
+
+  & > *
+    display: inline-block
+    vertical-align: middle
+    text-align: left
+
+    &.aligned-center
+      text-align: center
+
+    &.aligned-right
+      text-align: right

@@ -1,0 +1,79 @@
++placeholders("list-bulletless")
+  margin: 0
+  padding: 0
+
+  li
+    list-style: none
+
+// Also declare as mixin because +placeholders()
+// cannot @extend %placeholders in multiple breakpoints
+
+=prepend-slash
+  &:before
+    content: '/'
+    margin: 0 12px 0 8px
+    font-weight: normal
+
+=append-slash
+  &:after
+    content: '/'
+    margin: 0 12px 0 8px
+    font-weight: normal
+
++placeholders("appended-slash")
+  +append-slash
+
++placeholders("prepended-slash")
+  +prepend-slash
+
+
++placeholders("list-inline")
+  margin: 0
+  padding: 0
+
+  li
+    display: inline-block
+    list-style: none
+    margin-right: $unit
+    vertical-align: top
+
+    &:last-child
+      margin-right: 0
+
+
++placeholders("list-inline--unspaced")
+  li
+    margin-right: 0
+
+
++placeholders("list-inline--pipes")
+  li
+    border-right: 1px solid $color-bg-gray-brown
+    padding-right: $unit-small
+    margin-right: $unit-small - rem(4) // inline space
+
+    &:last-child
+      padding-right: 0
+      border-right: none
+
+
++placeholders("list-inline--slashes")
+  li
+    margin: 0
+
+  li
+    +prepend-slash
+
+  li:first-child:before
+    content: ''
+    margin: 0
+
+
++placeholders("list--stacked")
+  margin: 0
+  padding: 0
+
+  li
+    list-style: none
+    padding: 1rem 0
+    border-bottom: 1px solid #ccc

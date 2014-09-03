@@ -1,0 +1,39 @@
+// H5BP visibility styles
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+
++placeholders("hidden")
+  display: none !important
+  visibility: hidden
+
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+
++placeholders("concealed")
+  border: 0 !important
+  clip: rect(0 0 0 0) !important
+  height: 1px !important
+  margin: -1px !important
+  overflow: hidden !important
+  padding: 0 !important
+  position: absolute !important
+  width: 1px !important
+
+
+// Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+
++placeholders("concealed-focusable")
+  &:active,
+  &:focus
+    clip: auto
+    height: auto
+    margin: 0
+    overflow: visible
+    position: static
+    width: auto
+
+
+// Hide visually and from screenreaders, but maintain layout
+
++placeholders("camouflaged")
+  visibility: hidden

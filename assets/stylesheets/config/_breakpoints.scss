@@ -1,0 +1,41 @@
+// In versions 3.3 this can be udpated to a map and be much more maintainable
+
+$breakpoints: (
+  "mobile"  0,
+  "fablet"  480px,
+  "tablet"  778px,
+  "desktop" 1040px,
+  "wide"    1200px
+) !default;
+
+// It's really hard to remove the units from a list fragment
+// so rewrite into individual variables
+// Again, with 3.3 maps this won't be required
+
+$device-width-mobile: 0px !default;
+$device-width-fablet: 480px !default;
+$device-width-tablet: 778px !default;
+$device-width-desktop: 1040px !default;
+$device-width-wide: 1200px !default;
+
+
+$device-breakpoints: (
+  'mobile'             '(max-width: 479px)',
+  'mobile-and-fablet'  '(max-width: 777px)',
+  'mobile-and-tablet'  '(max-width: 1039px)',
+
+  'fablet'             '(min-width: 480px) and (max-width: 777px)',
+  'fablet-and-tablet'  '(min-width: 480px) and (max-width: 1039px)',
+  'fablet-up'          '(min-width: 480px)',
+  'fablet-down'        '(max-width: 777px)',
+
+  'tablet'             '(min-width: 778px) and (max-width: 1039px)',
+  'tablet-and-desktop' '(min-width: 778px) and (max-width: 1199px)',
+  'tablet-up'          '(min-width: 778px)',
+  'tablet-down'        '(max-width: 1039px)',
+
+  'desktop'            '(min-width: 1040px) and (max-width: 1199px)',
+  'desktop-up'         '(min-width: 1040px)',
+
+  'wide-up'            '(min-width: 1200px)'
+) !default;
