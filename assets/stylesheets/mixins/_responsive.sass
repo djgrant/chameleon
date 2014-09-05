@@ -55,7 +55,7 @@ $devices: (null)
 
 @each $item in $device-breakpoints
   $device: unquote(#{nth($item, 1)})
-  $devices: append($devices, $device, space)
+  $devices: append($devices, $device, space) !global
 
 
 =debug-breakpoints
