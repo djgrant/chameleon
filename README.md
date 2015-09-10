@@ -8,43 +8,59 @@ Chameleon
 
 Add to your Gemfile:
 
-`gem 'chameleon-sass'`
+```ruby
+gem 'chameleon-sass'
+```
 
 Add to your main Sass stylesheet:
 
-`@import "chameleon";`
+```scss
+@import "chameleon";
+```
 
 
 ### Installing in a Compass project
 
 From the command line:
 
-`gem install chameleon-sass`
+```bash
+gem install chameleon-sass
+```
 
 Add to the top of your Compass config file (usually config.rb):
 
-`require 'chameleon-sass'`
+```ruby
+require 'chameleon-sass'
+```
 
 Add to your main Sass stylesheet:
 
-`@import "chameleon"`
+```scss
+@import "chameleon"
+```
 
 
 ### Installing in a Bower project
 
 From the command line:
 
-`bower install chameleon-sass`
+```bash
+bower install chameleon-sass
+```
 
 If you are using Compass you can add the import path to your Compass config file (usually config.rb):
 
-`add_import_path "bower_components/chameleon-sass/assets/stylesheets/"`
+```ruby
+add_import_path "bower_components/chameleon-sass/assets/stylesheets/"
+```
 
 Otherwise, you will need to manually add the above path to your @import.
 
 Add to your main Sass stylesheet:
 
-`@import "chameleon";`
+```scss
+@import "chameleon";
+```
 
 
 ### Generating a responsive grid
@@ -53,7 +69,7 @@ One of the defining feature of Chameleon is that no CSS is generated until you e
 
 Let's get started by adding some building blocks of a responsive grid:
 
-```
+```scss
 @import "chameleon";
 
 @include defaults();
@@ -73,7 +89,7 @@ Here we use the default breakpoint expressions defined by Chameleon to generate 
 
 Now, import your stylesheet into your page and add some markup:
 
-```
+```html
 <div class="row cols-spaced">
   <div class="col-1-2">
     <div class="panel">Half</div>
