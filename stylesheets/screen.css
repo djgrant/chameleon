@@ -134,6 +134,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     margin-bottom: 0;
   }
 }
+.cols-reversed {
+  direction: rtl;
+}
+.cols-reversed > * {
+  direction: ltr;
+  text-align: left;
+}
+
+.cols-spaced-small {
+  margin-left: -0.625rem;
+}
+.cols-spaced-small > * {
+  padding-left: 0.625rem;
+}
+
+@media all and (min-width: 480px) {
+  .cols-spaced-small-on-fablet-up {
+    margin-left: -0.625rem;
+  }
+  .cols-spaced-small-on-fablet-up > * {
+    padding-left: 0.625rem;
+  }
+}
+@media all and (min-width: 778px) {
+  .cols-spaced-small-on-tablet-up {
+    margin-left: -0.625rem;
+  }
+  .cols-spaced-small-on-tablet-up > * {
+    padding-left: 0.625rem;
+  }
+}
+@media all and (min-width: 1040px) {
+  .cols-spaced-small-on-desktop-up {
+    margin-left: -0.625rem;
+  }
+  .cols-spaced-small-on-desktop-up > * {
+    padding-left: 0.625rem;
+  }
+}
 .cols-spaced {
   margin-left: -1.25rem;
 }
@@ -205,4 +244,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .row.no-cols {
   letter-spacing: normal;
+}
+
+.row {
+  letter-spacing: -0.3em;
+}
+
+* {
+  transition: 0.3s;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.padded {
+  padding: 20px;
+}
+
+.bg-blue {
+  background: #34a7f0;
+}
+
+.text-white {
+  color: white;
 }

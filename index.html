@@ -4,19 +4,47 @@
 <title>Test</title>
 <style>
 @import 'stylesheets/screen.css';
-.panel { border: 1px solid gray; }
 </style>
 </head>
 <body>
 
-	<div class="row cols-spaced">
-		<div class="col-1-2">
-			<div class="panel">Half</div>
-		</div>
-		<div class="col-1-2">
-			<div class="panel">Half</div>
-		</div>
-	</div>
+  <div class="rows-spaced">
+  	<div class="row cols-spaced cols-to-rows-on-mobile rows-spaced">
+  		<div class="col-1-2">
+  			<div class="panel bg-blue padded text-white">1/2</div>
+  		</div>
+  		<div class="col-1-2">
+  			<div class="panel bg-blue padded text-white">2/2</div>
+  		</div>
+  	</div>
+
+    <div class="row cols-spaced cols-to-rows-on-mobile rows-spaced">
+      <div class="col-1-3">
+        <div class="panel bg-blue padded text-white">Third</div>
+      </div>
+      <div class="col-1-3">
+        <div class="panel bg-blue padded text-white">Third</div>
+      </div>
+      <div class="col-1-3">
+        <div class="panel bg-blue padded text-white">Third</div>
+      </div>
+    </div>
+
+    <div class="row cols-spaced cols-to-rows-on-mobile rows-spaced">
+      <div class="col-1-4">
+        <div class="panel bg-blue padded text-white">Quarter</div>
+      </div>
+      <div class="col-1-4">
+        <div class="panel bg-blue padded text-white">Quarter</div>
+      </div>
+      <div class="col-1-4">
+        <div class="panel bg-blue padded text-white">Quarter</div>
+      </div>
+      <div class="col-1-4">
+        <div class="panel bg-blue padded text-white">Quarter</div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
