@@ -128,6 +128,14 @@
     & > *
       margin-bottom: $_gutter
 
+  // Suck up margin from the last visible child
+  // Use negative margin in case the last child isn't visible
+  // Use :after in case someone else slaps a margin class on the element
+  &:after
+    content: ''
+    display: table
+    margin-bottom: -$_gutter
+
 +placeholders("rows-spaced-small")
   +rows-spaced($unit-small)
 
@@ -139,8 +147,3 @@
 
 +placeholders("rows-spaced-huge")
   +rows-spaced($unit-huge)
-
-=rows-spaced-defaults
-  // This can happily be applied to all rows
-  .#{$rowName}:last-child
-    padding-bottom: 0
