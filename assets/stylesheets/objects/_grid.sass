@@ -1,8 +1,4 @@
-$rowName: "row"
-$colName: "col"
-
-=row-defaults($row: $rowName)
-  $rowName: $row
+=row-defaults()
   @extend %expanded
 
   +on("fablet-down")
@@ -12,10 +8,9 @@ $colName: "col"
   &.no-cols
     letter-spacing: normal
 
-=col-defaults($col: $colName)
-  $colName: $col
-  [class^="#{$col}-"],
-  [class*=" #{$col}-"]
+=col-defaults()
+  [class^="col-"],
+  [class*=" col-"]
     @extend %col
     @extend %expanded
 
@@ -63,7 +58,7 @@ $colName: "col"
 // Switch cols to rows (stack 'em)
 
 +placeholders("cols-to-rows")
-  &.#{$rowName}
+  &.row
     display: block
     margin-left: 0
 
@@ -123,7 +118,7 @@ $colName: "col"
 // Row spacing - add baseline gutter
 
 =rows-spaced($_gutter)
-  & > .#{$rowName}
+  & > .row
     padding-bottom: $_gutter
 
   // Space cols that have been switched to rows too
