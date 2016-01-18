@@ -1,22 +1,23 @@
-=grid-defaults
-  .row
-    @extend %expanded
-    letter-spacing: -0.25em
+$rowName: "row"
+$colName: "col"
 
-    +on("fablet-down")
-      letter-spacing: -0.27em
+=row-defaults($row: $rowName)
+  $rowName: $row
+  @extend %expanded
 
+  +on("fablet-down")
     > *
       letter-spacing: normal
 
-  .row.no-cols
+  &.no-cols
     letter-spacing: normal
 
-  [class^="col-"],
-  [class*=" col-"]
+=col-defaults($col: $colName)
+  $colName: $col
+  [class^="#{$col}-"],
+  [class*=" #{$col}-"]
     @extend %col
     @extend %expanded
-
 
 +placeholders("col")
   display: inline-block
@@ -62,7 +63,7 @@
 // Switch cols to rows (stack 'em)
 
 +placeholders("cols-to-rows")
-  &.row
+  &.#{$rowName}
     display: block
     margin-left: 0
 
@@ -122,7 +123,7 @@
 // Row spacing - add baseline gutter
 
 =rows-spaced($_gutter)
-  & > .row
+  & > .#{$rowName}
     padding-bottom: $_gutter
 
   // Space cols that have been switched to rows too
@@ -146,5 +147,5 @@
 
 =rows-spaced-defaults
   // This can happily be applied to all rows
-  .row:last-child
+  .#{$rowName}:last-child
     padding-bottom: 0
