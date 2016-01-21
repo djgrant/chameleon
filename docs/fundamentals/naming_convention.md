@@ -1,6 +1,6 @@
 # Naming convention
 
-Chameleon follows a strict naming convention as outlined in the [Authoring guidelines](authoring_guidelines.md). As a result, selectors should be **easy to understand and predictable**.
+Chameleon follows a strict naming convention as outlined in the [Authoring guidelines](authoring_guidelines.md). As a result, selectors should be **predictable and easy to understand**.
 
 The selector: 
 
@@ -23,7 +23,7 @@ Much **the same as in normal speech**, we do not need to use extra punctuation t
 `.hidden-on-mobile` = adjective-preoposition-noun = a modifier that takes affect on certain media.
 
 
-Although the naming convention is strict, the selectors, being based on spoken English, are inherently easy to understand and predictable.
+Although the naming convention is strict, the selectors, being based on spoken English, are inherently predictable and easy to understand.
 
 ### Descibring children
 
