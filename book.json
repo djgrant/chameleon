@@ -1,5 +1,16 @@
 {
-    "structure": {
-        "summary": "docs/readme.md"
+  "gitbook": "2.4.3",
+  "structure": {
+    "summary": "docs/readme.md"
+  },
+  "plugins": ["edit-link", "prism", "-highlight", "github"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/djgrant/chameleon/tree/master",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/djgrant/chameleon/"
     }
+  }
 }
