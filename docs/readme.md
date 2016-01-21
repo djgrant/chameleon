@@ -1,4 +1,4 @@
-# Table of Contents
+## Table of Contents
 
 * [Introduction](/readme.md)
    * [Motivation](/docs/introduction/motivation.md)
