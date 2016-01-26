@@ -101,18 +101,3 @@ $devices: (null)
     +on($device)
       .#{$name}#{$postfix}
         @extend %#{$name}#{$postfix}
-
-
-// Generates a list of unit-based classes, for things like padded/spaced
-// So rather than having to have multiple @include classes calls for things like
-// spaced, spaced-tiny, spaced-big, spaced-bigger, etc, we can just run this for
-// the base class and all the sizes get extended.
-=unit-classes($name, $on: false)
-  $devices: if($on, $on, $devices)
-  @each $unit-label, $unit-value in $units
-    @each $device in $devices
-      $unit-postfix: if($unit-label == "default", "", -#{$unit-label})
-      $postfix: if($device == "base", "", -on-#{$device})
-      +on($device)
-        .#{$name}#{$unit-postfix}#{$postfix}
-          @extend %#{$name}#{$unit-postfix}#{$postfix}
