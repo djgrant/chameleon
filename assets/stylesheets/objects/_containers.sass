@@ -11,15 +11,15 @@ $width-container-tiny: rem(250)
   margin: 0 auto
 
   @if $larger-than-fablet
-    +mq($to: px($width-container + $unit-big * 2))
-      margin: 0 $unit-big
+    +mq($to: px($width-container + map-get($units, 'big') * 2))
+      margin: 0 map-get($units, 'big')
 
     +on("fablet-down")
-      margin: 0 $unit
+      margin: 0 map-get($units, 'default')
 
   @else
-    +mq($to: px($width-container + $unit * 2))
-      margin: 0 $unit
+    +mq($to: px($width-container + map-get($units, 'default') * 2))
+      margin: 0 map-get($units, 'default')
 
 %container
   +container($width-container)

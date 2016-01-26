@@ -107,16 +107,16 @@
     padding-left: $gutter
 
 +placeholders("cols-spaced-small")
-  +cols-spaced($unit-small)
+  +cols-spaced(map-get($units, 'small'))
 
 +placeholders("cols-spaced")
-  +cols-spaced($unit)
+  +cols-spaced(map-get($units, 'default'))
 
 +placeholders("cols-spaced-big")
-  +cols-spaced($unit-big)
+  +cols-spaced(map-get($units, 'big'))
 
 +placeholders("cols-spaced-huge")
-  +cols-spaced($unit-huge)
+  +cols-spaced(map-get($units, 'huge'))
 
 
 // Row spacing - add baseline gutter
@@ -133,16 +133,16 @@
       margin-bottom: $_gutter
 
 +placeholders("rows-spaced-small")
-  +rows-spaced($unit-small)
+  +rows-spaced(map-get($units, 'small'))
 
 +placeholders("rows-spaced")
-  +rows-spaced($unit)
+  +rows-spaced(map-get($units, 'default'))
 
 +placeholders("rows-spaced-big")
-  +rows-spaced($unit-big)
+  +rows-spaced(map-get($units, 'big'))
 
 +placeholders("rows-spaced-huge")
-  +rows-spaced($unit-huge)
+  +rows-spaced(map-get($units, 'huge'))
 
 =rows-spaced-defaults
   // This can happily be applied to all rows
