@@ -12,7 +12,7 @@
       #{$box-property}-#{$position}: map-get($units, 'default')
 
   @each $unit in $unit-loop
-    +placeholders('#{$box-label}-#{unit}')
+    +placeholders('#{$box-label}-#{$unit}')
       #{$box-property}: map-get($units, #{$unit})
 
     @each $position-label, $position in $position-loop
