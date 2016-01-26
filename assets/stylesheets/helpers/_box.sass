@@ -1,3 +1,20 @@
 +placeholders("widest")
   display: block
   width: 100%
+
+@each $box-label, $box-property in $box-loop
+
+  +placeholders('#{$box-label}')
+    #{$box-property}: map-get($units, 'default')
+
+  @each $position-label, $position in $position-loop
+    +placeholders('#{$box-label}-#{$position-label}')
+      #{$box-property}-#{$position}: map-get($units, 'default')
+
+  @each $unit in $unit-loop
+    +placeholders('#{$box-label}-#{unit}')
+      #{$box-property}: map-get($units, #{$unit})
+
+    @each $position-label, $position in $position-loop
+      +placeholders('#{$box-label}-#{$position-label}-#{$unit}')
+        #{$box-property}-#{$position}: map-get($units, #{$unit})
