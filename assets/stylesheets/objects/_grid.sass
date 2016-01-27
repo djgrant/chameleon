@@ -122,11 +122,8 @@
     padding-bottom: $_gutter
 
   // Space cols that have been switched to rows too
-  &[class*="cols-to-rows"]
-    margin-bottom: -$_gutter // removes gutter below last row / cols
-
-    & > *
-      margin-bottom: $_gutter
+  &[class*="cols-to-rows"] > *
+    margin-bottom: $_gutter
 
   // Suck up margin from the last visible child
   // Use negative margin in case the last child isn't visible
