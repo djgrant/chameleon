@@ -1,22 +1,18 @@
-=grid-defaults
-  .row
-    @extend %expanded
-    letter-spacing: -0.25em
+=row-defaults()
+  @extend %expanded
 
-    +on("fablet-down")
-      letter-spacing: -0.27em
-
+  +on("fablet-down")
     > *
       letter-spacing: normal
 
-  .row.no-cols
+  &.no-cols
     letter-spacing: normal
 
+=col-defaults()
   [class^="col-"],
   [class*=" col-"]
     @extend %col
     @extend %expanded
-
 
 +placeholders("col")
   display: inline-block
@@ -126,11 +122,16 @@
     padding-bottom: $_gutter
 
   // Space cols that have been switched to rows too
-  &[class*="cols-to-rows"]
-    margin-bottom: -$_gutter // removes gutter below last row / cols
+  &[class*="cols-to-rows"] > *
+    margin-bottom: $_gutter
 
-    & > *
-      margin-bottom: $_gutter
+  // Suck up margin from the last visible child
+  // Use negative margin in case the last child isn't visible
+  // Use :after in case someone else slaps a margin class on the element
+  &:after
+    content: ''
+    display: table
+    margin-bottom: -$_gutter
 
 +placeholders("rows-spaced-small")
   +rows-spaced(map-get($units, 'small'))
@@ -143,8 +144,3 @@
 
 +placeholders("rows-spaced-huge")
   +rows-spaced(map-get($units, 'huge'))
-
-=rows-spaced-defaults
-  // This can happily be applied to all rows
-  .row:last-child
-    padding-bottom: 0

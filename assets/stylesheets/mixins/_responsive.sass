@@ -94,8 +94,8 @@ $devices: (null)
 // Genenerate a list of classes for different breakpoints
 // Usage: +classes(big-thing, mobile tablet desktop-up)
 
-=classes($name, $on: false)
-  $devices: if($on, $on, $devices)
+=classes($name, $on: "base")
+  $devices: if($on == "all", $devices, $on)
   @each $device in $devices
     $postfix: if($device == "base", "", -on-#{$device})
     +on($device)

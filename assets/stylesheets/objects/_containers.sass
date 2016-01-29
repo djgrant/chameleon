@@ -1,50 +1,6 @@
-$width-container: rem(1000)
-$width-container-medium: rem(700)
-$width-container-small: rem(500)
-$width-container-tiny: rem(250)
-
-=container($width-container)
-
-  $larger-than-fablet: if($width-container > rem($device-width-tablet - 1), true, false)
-
+=container($max-width, $min-margin)
   max-width: $width-container
   margin: 0 auto
 
-  @if $larger-than-fablet
-    +mq($to: px($width-container + map-get($units, 'big') * 2))
-      margin: 0 map-get($units, 'big')
-
-    +on("fablet-down")
-      margin: 0 map-get($units, 'default')
-
-  @else
-    +mq($to: px($width-container + map-get($units, 'default') * 2))
-      margin: 0 map-get($units, 'default')
-
-%container
-  +container($width-container)
-
-%container-medium
-  +container($width-container-medium)
-
-%container-small
-  +container($width-container-small)
-
-%container-tiny
-  +container($width-container-tiny)
-
-
-// Complex col/container layouts
-%col-left-edge-to-1-3-container
-  @extend %col
-  width: calc((100vw - #{$width-container})/2 + (#{$width-container} * 1/3))
-
-  @media all and (max-width: $width-container)
-    width: calc(100vw * 1/3)
-
-%col-to-2-3-container
-  @extend %col
-  width: $width-container * 2/3
-
-  @media all and (max-width: $width-container)
-    width: 66.666666%
+  +mq($to: px($width-container + $min-margin * 2))
+    margin: 0 $min-margin
