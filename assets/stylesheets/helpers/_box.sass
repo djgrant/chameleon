@@ -7,14 +7,14 @@
   +placeholders('#{$box-label}')
     #{$box-property}: map-get($units, 'default')
 
-  @each $position-label, $position in $position-loop
-    +placeholders('#{$box-label}-#{$position-label}')
+  @each $position in $position-loop
+    +placeholders('#{$box-label}-#{$position}')
       #{$box-property}-#{$position}: map-get($units, 'default')
 
   @each $unit in $unit-loop
     +placeholders('#{$box-label}-#{$unit}')
       #{$box-property}: map-get($units, #{$unit})
 
-    @each $position-label, $position in $position-loop
-      +placeholders('#{$box-label}-#{$position-label}-#{$unit}')
+    @each $position in $position-loop
+      +placeholders('#{$box-label}-#{$position}-#{$unit}')
         #{$box-property}-#{$position}: map-get($units, #{$unit})
