@@ -1,6 +1,6 @@
 =container($max-width, $min-margin)
-  max-width: $width-container
+  max-width: $max-width
   margin: 0 auto
 
-  +mq($to: px($width-container + $min-margin * 2))
+  +mq($to: px($max-width + $min-margin * 2))
     margin: 0 $min-margin
