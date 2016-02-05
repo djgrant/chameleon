@@ -1,20 +1,24 @@
+$box-map: ('spaced': 'margin', 'padded': 'padding')
+$position-list: ('top' 'left' 'bottom' 'right')
+
+@each $box-label, $box-property in $box-map
+
+  +placeholders('#{$box-label}')
+    #{$box-property}: map-get($sizing-map, 'default')
+
+  @each $position in $position-list
+    +placeholders('#{$box-label}-#{$position}')
+      #{$box-property}-#{$position}: map-get($sizing-map, 'default')
+
+  @each $size-name, $size in $sizing-map
+    +placeholders('#{$box-label}-#{$size-name}')
+      #{$box-property}: $size
+
+    @each $position in $position-list
+      +placeholders('#{$box-label}-#{$position}-#{$size}')
+        #{$box-property}-#{$position}: map-get($sizing-map, #{$size})
+
+
 +placeholders("widest")
   display: block
   width: 100%
-
-@each $box-label, $box-property in $box-loop
-
-  +placeholders('#{$box-label}')
-    #{$box-property}: map-get($units, 'default')
-
-  @each $position in $position-loop
-    +placeholders('#{$box-label}-#{$position}')
-      #{$box-property}-#{$position}: map-get($units, 'default')
-
-  @each $unit in $unit-loop
-    +placeholders('#{$box-label}-#{$unit}')
-      #{$box-property}: map-get($units, #{$unit})
-
-    @each $position in $position-loop
-      +placeholders('#{$box-label}-#{$position}-#{$unit}')
-        #{$box-property}-#{$position}: map-get($units, #{$unit})

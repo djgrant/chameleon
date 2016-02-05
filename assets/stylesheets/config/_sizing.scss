@@ -1,0 +1,9 @@
+$sizing-map: (
+  "none": 0,
+  "tiny": rem(5),
+  "small": rem(10),
+  "default": rem(20),
+  "big": rem(40),
+  "bigger": rem(60),
+  "huge": rem(80)
+) !default;
