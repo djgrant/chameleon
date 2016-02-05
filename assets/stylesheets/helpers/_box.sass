@@ -1,6 +1,24 @@
 $box-map: ('spaced': 'margin', 'padded': 'padding')
 $position-list: ('top' 'left' 'bottom' 'right')
 
+// Display
++placeholders("block")
+  display: block
+
++placeholders("inline-block")
+  display: inline-block
+
+// Size
++placeholders("widest")
+  display: block
+  width: 100%
+
++placeholders("tallest")
+  display: block
+  height: 100%
+
+
+// Padding / Margin / Spacing
 @each $box-label, $box-property in $box-map
 
   +placeholders('#{$box-label}')
@@ -19,6 +37,17 @@ $position-list: ('top' 'left' 'bottom' 'right')
         #{$box-property}-#{$position}: map-get($sizing-map, #{$size})
 
 
-+placeholders("widest")
-  display: block
-  width: 100%
+=inline-blocks-spaced-defaults
+  [class*="inline-blocks-spaced"] > *
+    letter-spacing: normal
+
+@each $size-name, $size in $sizing-map
+  +placeholders('inline-blocks-spaced-#{$size}')
+    letter-spacing: $size
+    +write-once($ref: 'IBSD')
+      +inline-blocks-spaced-defaults
+
+  +placeholders('inline-blocks-spaced-#{$size}')
+    letter-spacing: $size
+    +write-once($ref: 'IBSD')
+      +inline-blocks-spaced-defaults
