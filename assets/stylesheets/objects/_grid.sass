@@ -133,14 +133,10 @@
     display: table
     margin-bottom: -$_gutter
 
-+placeholders("rows-spaced-small")
-  +rows-spaced(map-get($units, 'small'))
 
 +placeholders("rows-spaced")
   +rows-spaced(map-get($units, 'default'))
 
-+placeholders("rows-spaced-big")
-  +rows-spaced(map-get($units, 'big'))
-
-+placeholders("rows-spaced-huge")
-  +rows-spaced(map-get($units, 'huge'))
+@each $unit in $unit-loop
+  +placeholders("rows-spaced-#{$unit}")
+    +rows-spaced(map-get($units, #{unit}))
