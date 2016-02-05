@@ -1,0 +1,6 @@
+$write-map: ()
+@mixin write-once($ref)
+  $written: map-get($write-map, $ref)
+  @if $written != true
+    @content
+    $write-map: map-merge($write-map, ($ref: true)) !global
