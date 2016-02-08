@@ -35,10 +35,10 @@ $position-list: ('top' 'left' 'bottom' 'right')
   +placeholders('#{$box-label}')
     #{$box-property}: map-get($sizing-map, 'default')
 
-  +placeholders('padded-rows')
+  +placeholders('#{$box-label}-rows')
     +padded-rows(map-get($sizing-map, 'default'))
 
-  +placeholders('padded-cols')
+  +placeholders('#{$box-label}-cols')
     +padded-rows(map-get($sizing-map, 'default'))
 
   @each $position in $position-list
@@ -49,15 +49,15 @@ $position-list: ('top' 'left' 'bottom' 'right')
     +placeholders('#{$box-label}-#{$size-name}')
       #{$box-property}: $size
 
-    +placeholders('padded-rows-#{size-name}')
+    +placeholders('#{$box-label}-rows-#{size-name}')
       +padded-rows($size)
 
-    +placeholders('padded-cols-#{size-name}')
+    +placeholders('#{$box-label}-cols-#{size-name}')
       +padded-rows($size)
 
     @each $position in $position-list
-      +placeholders('#{$box-label}-#{$position}-#{$size}')
-        #{$box-property}-#{$position}: map-get($sizing-map, #{$size})
+      +placeholders('#{$box-label}-#{$position}-#{$size-name}')
+        #{$box-property}-#{$position}: #{$size}
 
 
 =inline-blocks-spaced-defaults
