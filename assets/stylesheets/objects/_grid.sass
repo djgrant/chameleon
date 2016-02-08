@@ -1,18 +1,16 @@
-=row-defaults()
+=grid-defaults($unmin: false, $spacing: -0.3em)
   @extend %expanded
+  letter-spacing: $spacing
 
-  +on("fablet-down")
-    > *
-      letter-spacing: normal
-
-  &.no-cols
-    letter-spacing: normal
-
-=col-defaults()
   [class^="col-"],
   [class*=" col-"]
     @extend %col
     @extend %expanded
+
+  & > *,
+  &.no-cols
+    letter-spacing: normal
+
 
 +placeholders("col")
   display: inline-block
@@ -113,6 +111,10 @@
 
 +placeholders("cols-spaced-huge")
   +cols-spaced(map-get($sizing-map, 'huge'))
+
+@each $size-name, $size in $sizing-map
+  +placeholders("cols-spaced-#{$size-name}")
+    +cols-spaced($size)
 
 
 // Row spacing - add baseline gutter
