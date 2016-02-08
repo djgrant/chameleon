@@ -8,21 +8,38 @@ $position-list: ('top' 'left' 'bottom' 'right')
 +placeholders("inline-block")
   display: inline-block
 
+
 // Size
 +placeholders("widest")
   display: block
   width: 100%
+  max-width: 100%
 
 +placeholders("tallest")
   display: block
   height: 100%
+  max-height: 100%
 
 
 // Padding / Margin / Spacing
+=padded-rows($padding)
+  padding-top: $padding
+  padding-bottom: $padding
+
+=padded-cols($padding)
+  padding-left: $padding
+  padding-right: $padding
+
 @each $box-label, $box-property in $box-map
 
   +placeholders('#{$box-label}')
     #{$box-property}: map-get($sizing-map, 'default')
+
+  +placeholders('padded-rows')
+    +padded-rows(map-get($sizing-map, 'default'))
+
+  +placeholders('padded-cols')
+    +padded-rows(map-get($sizing-map, 'default'))
 
   @each $position in $position-list
     +placeholders('#{$box-label}-#{$position}')
@@ -31,6 +48,12 @@ $position-list: ('top' 'left' 'bottom' 'right')
   @each $size-name, $size in $sizing-map
     +placeholders('#{$box-label}-#{$size-name}')
       #{$box-property}: $size
+
+    +placeholders('padded-rows-#{size-name}')
+      +padded-rows($size)
+
+    +placeholders('padded-cols-#{size-name}')
+      +padded-rows($size)
 
     @each $position in $position-list
       +placeholders('#{$box-label}-#{$position}-#{$size}')
