@@ -1,22 +1,23 @@
 =grid-defaults($unmin: false, $spacing: -0.3em)
   @extend %expanded
-  letter-spacing: $spacing
+
+  @if $unmin == true
+    letter-spacing: $spacing
+
+    & > *,
+    &.no-cols
+      letter-spacing: normal
 
   [class^="col-"],
   [class*=" col-"]
     @extend %col
     @extend %expanded
 
-  & > *,
-  &.no-cols
-    letter-spacing: normal
-
 
 +placeholders("col")
   display: inline-block
   min-height: 1px
   vertical-align: top
-  letter-spacing: normal
   word-spacing: normal
 
 +placeholders("col-1-2")
