@@ -1,12 +1,13 @@
 =grid-defaults($unmin: false, $spacing: -0.3em)
-  @extend %expanded
+  .row
+    @extend %expanded
 
-  @if $unmin == true
-    letter-spacing: $spacing
+    @if $unmin == true
+      letter-spacing: $spacing
 
-    & > *,
-    &.no-cols
-      letter-spacing: normal
+      & > *,
+      &.no-cols
+        letter-spacing: normal
 
   [class^="col-"],
   [class*=" col-"]
