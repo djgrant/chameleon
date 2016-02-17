@@ -22,13 +22,13 @@ $position-list: ('top' 'left' 'bottom' 'right')
 
 
 // Padding / Margin / Spacing
-=padded-rows($padding)
-  padding-top: $padding
-  padding-bottom: $padding
+=rows($prop, $size)
+  #{$prop}-top: $size
+  #{$prop}-bottom: $size
 
-=padded-cols($padding)
-  padding-left: $padding
-  padding-right: $padding
+=cols($prop, $size)
+  #{$prop}-left: $size
+  #{$prop}-right: $size
 
 @each $box-label, $box-property in $box-map
 
@@ -36,10 +36,10 @@ $position-list: ('top' 'left' 'bottom' 'right')
     #{$box-property}: map-get($sizing-map, 'default')
 
   +placeholders('#{$box-label}-rows')
-    +padded-rows(map-get($sizing-map, 'default'))
+    +rows($box-property, map-get($sizing-map, 'default'))
 
   +placeholders('#{$box-label}-cols')
-    +padded-rows(map-get($sizing-map, 'default'))
+    +cols($box-property, map-get($sizing-map, 'default'))
 
   @each $position in $position-list
     +placeholders('#{$box-label}-#{$position}')
@@ -49,11 +49,11 @@ $position-list: ('top' 'left' 'bottom' 'right')
     +placeholders('#{$box-label}-#{$size-name}')
       #{$box-property}: $size
 
-    +placeholders('#{$box-label}-rows-#{size-name}')
-      +padded-rows($size)
+    +placeholders('#{$box-label}-rows-#{$size-name}')
+      +rows($box-property, $size)
 
-    +placeholders('#{$box-label}-cols-#{size-name}')
-      +padded-rows($size)
+    +placeholders('#{$box-label}-cols-#{$size-name}')
+      +cols($box-property, $size)
 
     @each $position in $position-list
       +placeholders('#{$box-label}-#{$position}-#{$size-name}')
