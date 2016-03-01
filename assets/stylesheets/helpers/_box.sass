@@ -69,6 +69,7 @@ $position-list: ('top' 'left' 'bottom' 'right')
   +write-once($ref: 'IBSD')
     +inline-blocks-spaced-defaults
 
+@each $size-name, $size in $sizing-map
   +placeholders('inline-blocks-spaced-#{$size-name}')
     letter-spacing: $size
     +write-once($ref: 'IBSD')
