@@ -102,17 +102,9 @@
   & > *
     padding-left: $gutter
 
-+placeholders("cols-spaced-small")
-  +cols-spaced(map-get($sizing-map, 'small'))
 
 +placeholders("cols-spaced")
   +cols-spaced(map-get($sizing-map, 'default'))
-
-+placeholders("cols-spaced-big")
-  +cols-spaced(map-get($sizing-map, 'big'))
-
-+placeholders("cols-spaced-huge")
-  +cols-spaced(map-get($sizing-map, 'huge'))
 
 @each $size-name, $size in $sizing-map
   +placeholders("cols-spaced-#{$size-name}")

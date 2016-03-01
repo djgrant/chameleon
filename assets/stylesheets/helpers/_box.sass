@@ -30,33 +30,33 @@ $position-list: ('top' 'left' 'bottom' 'right')
   #{$prop}-left: $size
   #{$prop}-right: $size
 
-@each $box-label, $box-property in $box-map
+@each $box-name, $box-property in $box-map
 
-  +placeholders('#{$box-label}')
+  +placeholders('#{$box-name}')
     #{$box-property}: map-get($sizing-map, 'default')
 
-  +placeholders('#{$box-label}-rows')
+  +placeholders('#{$box-name}-rows')
     +rows($box-property, map-get($sizing-map, 'default'))
 
-  +placeholders('#{$box-label}-cols')
+  +placeholders('#{$box-name}-cols')
     +cols($box-property, map-get($sizing-map, 'default'))
 
   @each $position in $position-list
-    +placeholders('#{$box-label}-#{$position}')
+    +placeholders('#{$box-name}-#{$position}')
       #{$box-property}-#{$position}: map-get($sizing-map, 'default')
 
   @each $size-name, $size in $sizing-map
-    +placeholders('#{$box-label}-#{$size-name}')
+    +placeholders('#{$box-name}-#{$size-name}')
       #{$box-property}: $size
 
-    +placeholders('#{$box-label}-rows-#{$size-name}')
+    +placeholders('#{$box-name}-rows-#{$size-name}')
       +rows($box-property, $size)
 
-    +placeholders('#{$box-label}-cols-#{$size-name}')
+    +placeholders('#{$box-name}-cols-#{$size-name}')
       +cols($box-property, $size)
 
     @each $position in $position-list
-      +placeholders('#{$box-label}-#{$position}-#{$size-name}')
+      +placeholders('#{$box-name}-#{$position}-#{$size-name}')
         #{$box-property}-#{$position}: #{$size}
 
 
@@ -65,12 +65,12 @@ $position-list: ('top' 'left' 'bottom' 'right')
     letter-spacing: normal
 
 @each $size-name, $size in $sizing-map
-  +placeholders('inline-blocks-spaced-#{$size}')
+  +placeholders('inline-blocks-spaced-#{$size-name}')
     letter-spacing: $size
     +write-once($ref: 'IBSD')
       +inline-blocks-spaced-defaults
 
-  +placeholders('inline-blocks-spaced-#{$size}')
+  +placeholders('inline-blocks-spaced-#{$size-name}')
     letter-spacing: $size
     +write-once($ref: 'IBSD')
       +inline-blocks-spaced-defaults
