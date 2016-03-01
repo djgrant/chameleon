@@ -1,7 +1,332 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+[class^="col-"],
+[class*=" col-"] {
+  display: inline-block;
+  min-height: 1px;
+  vertical-align: top;
+  word-spacing: normal;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+.col-1-3 {
+  width: 33.33333%;
+}
+
+.col-2-3 {
+  width: 66.66667%;
+}
+
+.col-1-4 {
+  width: 25%;
+}
+
+.col-3-4 {
+  width: 75%;
+}
+
+.col-1-5 {
+  width: 20%;
+}
+
+.col-2-5 {
+  width: 40%;
+}
+
+.col-3-5 {
+  width: 60%;
+}
+
+.col-4-5 {
+  width: 80%;
+}
+
+.col-1-6 {
+  width: 16.66667%;
+}
+
+.col-5-6 {
+  width: 83.33333%;
+}
+
+@media all and (max-width: 479px) {
+  .row.cols-to-rows-on-mobile {
+    display: block;
+    margin-left: 0;
+  }
+  .cols-to-rows-on-mobile > * {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cols-to-rows-on-mobile > *:last-child {
+    margin-bottom: 0;
+  }
+}
+@media all and (max-width: 777px) {
+  .row.cols-to-rows-on-fablet-down {
+    display: block;
+    margin-left: 0;
+  }
+  .cols-to-rows-on-fablet-down > * {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cols-to-rows-on-fablet-down > *:last-child {
+    margin-bottom: 0;
+  }
+}
+@media all and (max-width: 1039px) {
+  .row.cols-to-rows-on-tablet-down {
+    display: block;
+    margin-left: 0;
+  }
+  .cols-to-rows-on-tablet-down > * {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cols-to-rows-on-tablet-down > *:last-child {
+    margin-bottom: 0;
+  }
+}
+@media all and (min-width: 1040px) {
+  .row.cols-to-rows-on-desktop-up {
+    display: block;
+    margin-left: 0;
+  }
+  .cols-to-rows-on-desktop-up > * {
+    display: block;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .cols-to-rows-on-desktop-up > *:last-child {
+    margin-bottom: 0;
+  }
+}
+.cols-reversed {
+  direction: rtl;
+}
+.cols-reversed > * {
+  direction: ltr;
+  text-align: left;
+}
+
+.cols-equal-height {
+  display: table-row;
+}
+.cols-equal-height > * {
+  display: table-cell;
+}
+.cols-equal-height > :first-child {
+  padding-left: 0;
+}
+
+.cols-spaced {
+  margin-left: -1.25rem;
+}
+.cols-spaced > * {
+  padding-left: 1.25rem;
+}
+
+.rows-spaced > .row {
+  padding-bottom: 1.25rem;
+}
+[class*="cols-to-rows"].rows-spaced > * {
+  margin-bottom: 1.25rem;
+}
+.rows-spaced:after {
+  content: "";
+  display: table;
+  margin-bottom: -1.25rem;
+}
+
+.rows-spaced-small > .row {
+  padding-bottom: 0.625rem;
+}
+[class*="cols-to-rows"].rows-spaced-small > * {
+  margin-bottom: 0.625rem;
+}
+.rows-spaced-small:after {
+  content: "";
+  display: table;
+  margin-bottom: -0.625rem;
+}
+
+.rows-spaced-big > .row {
+  padding-bottom: 2.5rem;
+}
+[class*="cols-to-rows"].rows-spaced-big > * {
+  margin-bottom: 2.5rem;
+}
+.rows-spaced-big:after {
+  content: "";
+  display: table;
+  margin-bottom: -2.5rem;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.widest {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tallest {
+  display: block;
+  height: 100%;
+  max-height: 100%;
+}
+
+.padded {
+  padding: 1.25rem;
+}
+
+.padded-rows {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.padded-cols {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.padded-none {
+  padding: 0;
+}
+
+.padded-small {
+  padding: 0.625rem;
+}
+
+.padded-big {
+  padding: 2.5rem;
+}
+
+.padded-rows-big {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.inline-blocks-spaced {
+  letter-spacing: 1.25rem;
+}
+.inline-blocks-spaced [class*="inline-blocks-spaced"] > * {
+  letter-spacing: normal;
+}
+
+.aligned-left {
+  text-align: left;
+}
+
+.aligned-right {
+  text-align: right;
+}
+
+.aligned-center {
+  text-align: center;
+}
+
+@media all and (max-width: 479px) {
+  .aligned-center-on-mobile {
+    text-align: center;
+  }
+}
+.positioned-absolute {
+  position: absolute;
+}
+
+.positioned-relative {
+  position: relative;
+}
+
+.positioned-fixed {
+  position: fixed;
+}
+
+.floated-left {
+  float: left;
+}
+
+.floated-right {
+  float: right;
+}
+
+.row:before, [class^="col-"]:before,
+[class*=" col-"]:before, .expanded:before, .row:after, [class^="col-"]:after,
+[class*=" col-"]:after, .expanded:after {
+  content: "";
+  display: table;
+}
+.row:after, [class^="col-"]:after,
+[class*=" col-"]:after, .expanded:after {
+  clear: both;
+}
+
+.child-centered {
+  text-align: center;
+}
+.child-centered::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.child-centered > * {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+.child-centered > *.aligned-center {
+  text-align: center;
+}
+.child-centered > *.aligned-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+@media all and (max-width: 479px) {
+  .hidden-on-mobile {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media all and (min-width: 480px) {
+  .hidden-on-fablet-up {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+.concealed {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.camouflaged {
+  visibility: hidden;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -58,198 +383,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-[class^="col-"],
-[class*=" col-"] {
-  display: inline-block;
-  min-height: 1px;
-  vertical-align: top;
-  letter-spacing: normal;
-  word-spacing: normal;
-}
-
-.col-1-2 {
-  width: 50%;
-}
-
-.col-1-3 {
-  width: 33.33333%;
-}
-
-.col-1-4 {
-  width: 25%;
-}
-
-.row.cols-to-rows {
-  display: block;
-  margin-left: 0;
-}
-.cols-to-rows > * {
-  display: block;
-  width: 100% !important;
-  padding: 0 !important;
-}
-.cols-to-rows > *:last-child {
-  margin-bottom: 0;
-}
-
-@media all and (max-width: 479px) {
-  .row.cols-to-rows-on-mobile {
-    display: block;
-    margin-left: 0;
-  }
-  .cols-to-rows-on-mobile > * {
-    display: block;
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  .cols-to-rows-on-mobile > *:last-child {
-    margin-bottom: 0;
-  }
-}
-@media all and (max-width: 777px) {
-  .row.cols-to-rows-on-fablet-down {
-    display: block;
-    margin-left: 0;
-  }
-  .cols-to-rows-on-fablet-down > * {
-    display: block;
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  .cols-to-rows-on-fablet-down > *:last-child {
-    margin-bottom: 0;
-  }
-}
-@media all and (max-width: 1039px) {
-  .row.cols-to-rows-on-tablet-down {
-    display: block;
-    margin-left: 0;
-  }
-  .cols-to-rows-on-tablet-down > * {
-    display: block;
-    width: 100% !important;
-    padding: 0 !important;
-  }
-  .cols-to-rows-on-tablet-down > *:last-child {
-    margin-bottom: 0;
-  }
-}
-.cols-reversed {
-  direction: rtl;
-}
-.cols-reversed > * {
-  direction: ltr;
-  text-align: left;
-}
-
-.cols-spaced-small {
-  margin-left: -0.625rem;
-}
-.cols-spaced-small > * {
-  padding-left: 0.625rem;
-}
-
-@media all and (min-width: 480px) {
-  .cols-spaced-small-on-fablet-up {
-    margin-left: -0.625rem;
-  }
-  .cols-spaced-small-on-fablet-up > * {
-    padding-left: 0.625rem;
-  }
-}
-@media all and (min-width: 778px) {
-  .cols-spaced-small-on-tablet-up {
-    margin-left: -0.625rem;
-  }
-  .cols-spaced-small-on-tablet-up > * {
-    padding-left: 0.625rem;
-  }
-}
-@media all and (min-width: 1040px) {
-  .cols-spaced-small-on-desktop-up {
-    margin-left: -0.625rem;
-  }
-  .cols-spaced-small-on-desktop-up > * {
-    padding-left: 0.625rem;
-  }
-}
-.cols-spaced {
-  margin-left: -1.25rem;
-}
-.cols-spaced > * {
-  padding-left: 1.25rem;
-}
-
-@media all and (min-width: 480px) {
-  .cols-spaced-on-fablet-up {
-    margin-left: -1.25rem;
-  }
-  .cols-spaced-on-fablet-up > * {
-    padding-left: 1.25rem;
-  }
-}
-@media all and (min-width: 778px) {
-  .cols-spaced-on-tablet-up {
-    margin-left: -1.25rem;
-  }
-  .cols-spaced-on-tablet-up > * {
-    padding-left: 1.25rem;
-  }
-}
-@media all and (min-width: 1040px) {
-  .cols-spaced-on-desktop-up {
-    margin-left: -1.25rem;
-  }
-  .cols-spaced-on-desktop-up > * {
-    padding-left: 1.25rem;
-  }
-}
-.rows-spaced > .row {
-  padding-bottom: 1.25rem;
-}
-[class*="cols-to-rows"].rows-spaced {
-  margin-bottom: -1.25rem;
-}
-[class*="cols-to-rows"].rows-spaced > * {
-  margin-bottom: 1.25rem;
-}
-
-.row:before, [class^="col-"]:before,
-[class*=" col-"]:before, .row:after, [class^="col-"]:after,
-[class*=" col-"]:after {
-  content: "";
-  display: table;
-}
-.row:after, [class^="col-"]:after,
-[class*=" col-"]:after {
-  clear: both;
-}
-
-* {
-  position: relative;
-  box-sizing: border-box;
-}
-
-.row {
-  letter-spacing: -0.25em;
-}
-@media all and (max-width: 777px) {
-  .row {
-    letter-spacing: -0.27em;
-  }
-}
-.row > * {
-  letter-spacing: normal;
-}
-
-.row.no-cols {
-  letter-spacing: normal;
-}
-
-.row {
-  letter-spacing: -0.3em;
-}
-
 * {
   transition: 0.3s;
 }
@@ -258,14 +391,31 @@ body {
   font-family: sans-serif;
 }
 
-.padded {
-  padding: 20px;
-}
-
 .bg-blue {
   background: #34a7f0;
 }
 
 .text-white {
   color: white;
+}
+
+.row {
+  letter-spacing: -0.3em;
+}
+.row > *, .row.no-cols {
+  letter-spacing: normal;
+}
+
+.row {
+  letter-spacing: -0.3em;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+@media all and (max-width: 980px) {
+  .container {
+    margin: 0 15px;
+  }
 }
