@@ -64,11 +64,10 @@ $position-list: ('top' 'left' 'bottom' 'right')
   [class*="inline-blocks-spaced"] > *
     letter-spacing: normal
 
-@each $size-name, $size in $sizing-map
-  +placeholders('inline-blocks-spaced-#{$size-name}')
-    letter-spacing: $size
-    +write-once($ref: 'IBSD')
-      +inline-blocks-spaced-defaults
++placeholders('inline-blocks-spaced')
+  letter-spacing: map-get($sizing-map, 'default')
+  +write-once($ref: 'IBSD')
+    +inline-blocks-spaced-defaults
 
   +placeholders('inline-blocks-spaced-#{$size-name}')
     letter-spacing: $size
