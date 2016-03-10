@@ -1,6 +1,7 @@
-=container($max-width, $min-margin)
+=container($max-width, $min-margin: null)
   max-width: $max-width
   margin: 0 auto
 
-  +mq($to: $max-width + $min-margin * 2)
-    margin: 0 $min-margin
+  @if $min-margin
+    +mq($to: $max-width + $min-margin * 2)
+      margin: 0 $min-margin
