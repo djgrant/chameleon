@@ -1,7 +1,9 @@
 =container($max-width, $min-margin: null)
   max-width: $max-width
-  margin: 0 auto
+  margin-left: auto
+  margin-right: auto
 
   @if $min-margin
     +mq($to: $max-width + $min-margin * 2)
-      margin: 0 $min-margin
+      margin-left: $min-margin
+      margin-right: $min-margin
