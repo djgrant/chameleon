@@ -1,6 +1,6 @@
 module ChameleonSass
-  VERSION = "0.5.7"
-  DATE = "2015-03-01"
+  VERSION = "0.5.8"
+  DATE = "2015-03-10"
 
   class << self
 
