@@ -31,11 +31,11 @@ module ChameleonSass
     end
 
     def compass?
-      return :compass if defined?(::Compass)
+      :compass if defined?(::Compass)
     end
 
     def sass?
-      return :sass if defined?(::Sass)
+      :sass if defined?(::Sass)
     end
 
     def register_compass
