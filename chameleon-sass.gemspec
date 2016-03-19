@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   s.files = ["README.md"]
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("assets/**/*.*")
+
+  s.add_development_dependency "rspec", "~> 3.4.0"
 end
