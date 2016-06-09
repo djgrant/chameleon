@@ -1,0 +1,16 @@
+@include classes('aligned-left');
+@include classes('aligned-center', $on: 'base' 'mobile');
+@include classes('aligned-right');
+
+@include classes('floated-left');
+@include classes('floated-right');
+
+@include classes('expanded');
+
+@include classes('widest');
+@include classes('tallest');
+
+@include classes('positioned-relative');
+@include classes('positioned-absolute');
+@include classes('positioned-fixed');
+@include classes('child-centered');
