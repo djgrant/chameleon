@@ -1,6 +1,6 @@
 {
   "name": "chameleon-sass",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A styleless Sass framework for responsive user interfaces",
   "repository": {
     "type": "git",
