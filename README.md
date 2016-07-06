@@ -45,7 +45,7 @@ Chameleon selectors be used anywhere in your stylesheet  - even if they weren't 
 You can also create selectors of your own using Chameleon's core mixins.
 
 ```scss
-@include placeholder('myHelper') {
+@include placeholders('myHelper') {
   color: red;
 }
 @include classes('myHelper', $on: 'base mobile tablet-up');
