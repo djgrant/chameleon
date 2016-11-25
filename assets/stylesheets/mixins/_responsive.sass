@@ -1,3 +1,5 @@
+@import "../config/breakpoints"
+
 =on($_device)
   @each $breakpoint in $device-breakpoints
     $device: nth($breakpoint, 1)
